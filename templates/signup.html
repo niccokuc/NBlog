@@ -1,15 +1,54 @@
 {% extends 'Navigation_Bar.html' %}
-{% block head_title %}Viewing category {{ category.title }}{% endblock %}
-{% block title %}{{ category.title }}{% endblock %}
+{% block title %}SIGNUP{% endblock %}
 
 {% block content %}
-    {% if posts %}
-        <ul>
-        {% for post in posts %}
-            <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+
+{#    <form method="POST" action=""> {%  csrf_token %}#}
+{##}
+{#        <input type="submit" value="Join" class="btn" />#}
+{#    </form>#}
+
+    <form method="POST" action=""> {%  csrf_token %}
+        {% for field in form %}
+         <div class="fieldWrapper">
+            {% if "varEmail" in field.label_tag %}
+                <div class="form-group">
+                    <label for="varEmail">Email:</label>
+                    <input type="text" id="varEmail" class="form-control" name="varEmail">
+                </div>
+            {% endif %}
+
+            {% if "varName" in field.label_tag %}
+                <div class="form-group">
+                    <label for="varName">Name:</label>
+                    <input type="text" id="varName" class="form-control" name="varName">
+                </div>
+            {% endif %}
+
+            {% if "varUser" in field.label_tag %}
+                <div class="form-group">
+                    <label for="varUser">User Id:</label>
+                    <input type="text" id="varUser" class="form-control" name="varUser">
+                </div>
+            {% endif %}
+
+         </div>
         {% endfor %}
-        </ul>
-    {% else %}
-        <p>There are no posts.</p>
-    {% endif %}
+{#        <div class="form-group">#}
+{#        {{ form.as_p }}#}
+{#        </div>#}
+{#        <div class="form-group">#}
+{#            <label for="email">Email address</label>#}
+{#            <input type="email" class="form-control" id="email">#}
+{#        </div>#}
+{#       <div class="form-group">#}
+{#            <label for="name">Name</label>#}
+{#            <input type="text" class="form-control" id="name">#}
+{#        </div>#}
+{#        <div class="form-group">#}
+{#            <label for="user">User</label>#}
+{#            <input type="text" class="form-control" id="user">#}
+{#        </div>#}
+        <input type="submit" value="Join" class="btn" />
+    </form>
 {% endblock %}

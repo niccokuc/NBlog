@@ -3,11 +3,6 @@
 
 {% block content %}
 
-{#    <form method="POST" action=""> {%  csrf_token %}#}
-{##}
-{#        <input type="submit" value="Join" class="btn" />#}
-{#    </form>#}
-
     <form method="POST" action=""> {%  csrf_token %}
         {% for field in form %}
          <div class="fieldWrapper">
@@ -31,24 +26,8 @@
                     <input type="text" id="varUser" class="form-control" name="varUser">
                 </div>
             {% endif %}
-
          </div>
         {% endfor %}
-{#        <div class="form-group">#}
-{#        {{ form.as_p }}#}
-{#        </div>#}
-{#        <div class="form-group">#}
-{#            <label for="email">Email address</label>#}
-{#            <input type="email" class="form-control" id="email">#}
-{#        </div>#}
-{#       <div class="form-group">#}
-{#            <label for="name">Name</label>#}
-{#            <input type="text" class="form-control" id="name">#}
-{#        </div>#}
-{#        <div class="form-group">#}
-{#            <label for="user">User</label>#}
-{#            <input type="text" class="form-control" id="user">#}
-{#        </div>#}
-        <input type="submit" value="Join" class="btn" />
+        <input type="submit" value="Join" class="btn btn-success" />
     </form>
 {% endblock %}

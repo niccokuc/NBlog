@@ -11,6 +11,7 @@ every application defined under INSTALLED_APPS in the settings.py
 """
 
 """
+teswt123
 Register our models Blog & Category with the admin
 """
 

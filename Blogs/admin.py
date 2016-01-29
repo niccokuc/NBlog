@@ -9,6 +9,7 @@ Create admin.py in blog folder we created earlier.
 This admin.py file is automatically checked by django admin for
 every application defined under INSTALLED_APPS in the settings.py
 Adding change to detect
+Testing 123
 """
 
 """
